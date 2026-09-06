@@ -179,6 +179,12 @@ def apply_fuzzel(colours: dict[str, str]) -> None:
 
 
 @log_exception
+def apply_bottom(colours: dict[str, str]) -> None:
+    template = gen_replace(colours, templates_dir / "bottom.toml", hash=True)
+    atomic_write(config_dir / "bottom/bottom.toml", template)
+
+
+@log_exception
 def apply_btop(colours: dict[str, str]) -> None:
     template = gen_replace(colours, templates_dir / "btop.theme", hash=True)
     atomic_write(config_dir / "btop/themes/caelestia.theme", template)
@@ -434,6 +440,8 @@ def apply_colours(colours: dict[str, str], mode: str) -> None:
                 apply_pandora(colours, mode)
             if check("enableFuzzel"):
                 apply_fuzzel(colours)
+            if check("enableBottom"):
+                apply_bottom(colours)
             if check("enableBtop"):
                 apply_btop(colours)
             if check("enableNvtop"):

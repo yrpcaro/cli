@@ -87,10 +87,10 @@ class Command:
                 },
             },
             "sysmon": {
-                "btop": {
+                "btm": {
                     "enable": True,
-                    "match": [{"class": "btop", "title": "btop", "workspace": {"name": "special:sysmon"}}],
-                    "command": ["foot", "-a", "btop", "-T", "btop", "fish", "-C", "exec btop"],
+                    "match": [{"class": "btm", "title": "bottom", "workspace": {"name": "special:sysmon"}}],
+                    "command": ["foot", "-a", "btm", "-T", "bottom", "fish", "-C", "exec btm"],
                 },
             },
             "todo": {
