@@ -33,7 +33,7 @@ and likely to be unstable/have bugs. Regular users are recommended to use the st
 You can run the CLI directly via `nix run`:
 
 ```sh
-nix run github:caelestia-dots/cli
+nix run github:yrpcaro/cli
 ```
 
 Or add it to your system configuration:
@@ -44,7 +44,7 @@ Or add it to your system configuration:
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     caelestia-cli = {
-      url = "github:caelestia-dots/cli";
+      url = "github:yrpcaro/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -62,7 +62,7 @@ or a devshell. The CLI can then be used via the `caelestia` command.
 > to be exposed.
 
 For home-manager, you can also use the Caelestia's home manager module (explained in
-[configuring](https://github.com/caelestia-dots/shell?tab=readme-ov-file#home-manager-module)) that
+[configuring](https://github.com/yrpcaro/shell?tab=readme-ov-file#home-manager-module)) that
 installs and configures the shell and the CLI.
 
 ### Manual installation
@@ -85,7 +85,7 @@ completions, copy the `completions/caelestia.fish` file to
 `/usr/share/fish/vendor_completions.d/caelestia.fish`.
 
 ```sh
-git clone https://github.com/caelestia-dots/cli.git
+git clone https://github.com/yrpcaro/cli.git
 cd cli
 python -m build --wheel
 sudo python -m installer dist/*.whl
@@ -246,10 +246,10 @@ All configuration options are in `~/.config/caelestia/cli.json`.
             }
         },
         "sysmon": {
-            "btop": {
+            "btm": {
                 "enable": true,
-                "match": [{ "class": "btop", "title": "btop", "workspace": { "name": "special:sysmon" } }],
-                "command": ["foot", "-a", "btop", "-T", "btop", "fish", "-C", "exec btop"]
+                "match": [{ "class": "btm", "title": "bottom", "workspace": { "name": "special:sysmon" } }],
+                "command": ["foot", "-a", "btm", "-T", "bottom", "fish", "-C", "exec btm"]
             }
         },
         "todo": {
@@ -262,7 +262,7 @@ All configuration options are in `~/.config/caelestia/cli.json`.
         }
     },
     "dots": {
-        "url": "https://github.com/caelestia-dots/caelestia.git",
+        "url": "https://github.com/yrpcaro/caelestia.git",
         "branch": "main"
     }
 }

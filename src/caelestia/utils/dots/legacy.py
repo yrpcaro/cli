@@ -32,7 +32,7 @@ def _find_legacy_repo(path: Path) -> Path | None:
         return
 
     # Check remote
-    if remote.strip() != "https://github.com/caelestia-dots/caelestia.git":
+    if remote.strip() not in ("https://github.com/yrpcaro/caelestia.git", "https://github.com/caelestia-dots/caelestia.git"):
         return
 
     # Ignore anything outside home
